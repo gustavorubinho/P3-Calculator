@@ -37,7 +37,7 @@ Se você usa Mac, Linux, ou apenas não quer rodar o arquivo `.exe`, você pode 
 ---
 
 ## Como baixar o Aplicativo Desktop (Windows)
-1. Vá até a aba **Releases** aqui no lado direito do repositório.
+1. Vá até a aba **Releases** aqui no lado direito do repositório ou clique neste link (https://github.com/gustavorubinho/P3-Calculator/releases/download/Download/Calculadora.exe).
 2. Baixe o arquivo `Calculadora.exe` da versão mais recente.
 3. Dê um duplo clique e aproveite! (Por ser um `.exe` recém-criado, o Windows Defender pode avisar que é desconhecido. Basta clicar em "Mais informações" e "Executar assim mesmo").
 
