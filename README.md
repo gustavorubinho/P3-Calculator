@@ -1,16 +1,21 @@
-# 🌘 Persona 3 Calculator
+# Persona 3 Calculator
 
 Uma calculadora funcional inspirada na interface e estética de **Persona 3**! Desenvolvida utilizando tecnologias Web (HTML, CSS e JavaScript) e empacotada como um aplicativo Desktop para Windows através do Python e PyWebView.
 
-## 🌟 Funcionalidades
-- **Design Autêntico:** Cores, fontes e formas que remetem ao design marcante de Persona 3.
+## Funcionalidades
 - **Animações Dinâmicas:** Efeito de balanço constante (sway) e resposta ao passar o mouse.
 - **Efeitos Sonoros:** Sons imersivos de clique, *hover* e som de impacto épico ao exibir o resultado final.
 - **Versão Desktop:** Roda como um aplicativo nativo (`.exe`) sem precisar de um navegador.
 
+
+
+https://github.com/user-attachments/assets/03ca57f6-4d55-48f8-af3c-20fe6371775b
+
+
+
 ---
 
-## 🚀 Como testar (Direto no Navegador Online)
+## Como testar (Direto no Navegador Online)
 Se você quer apenas usar a calculadora sem baixar o `.exe`, basta acessar o link abaixo:
 
 👉 **[Acessar a Versão Web no GitHub Pages]** *(Insira o link aqui)*
@@ -22,7 +27,7 @@ Assim você terá um ícone da calculadora direto na sua área de trabalho ou te
 
 ---
 
-## 📂 Como baixar e rodar a Versão Web (Offline)
+## Como baixar e rodar a Versão Web (Offline)
 Se você usa Mac, Linux, ou apenas não quer rodar o arquivo `.exe`, você pode abrir a calculadora diretamente como uma página web comum:
 1. No topo deste repositório, clique no botão verde **Code** e depois em **Download ZIP**.
 2. Extraia o arquivo `.zip` no seu computador.
@@ -31,14 +36,14 @@ Se você usa Mac, Linux, ou apenas não quer rodar o arquivo `.exe`, você pode 
 
 ---
 
-## 💻 Como baixar o Aplicativo Desktop (Windows)
+## Como baixar o Aplicativo Desktop (Windows)
 1. Vá até a aba **Releases** aqui no lado direito do repositório.
 2. Baixe o arquivo `Calculadora.exe` da versão mais recente.
 3. Dê um duplo clique e aproveite! (Por ser um `.exe` recém-criado, o Windows Defender pode avisar que é desconhecido. Basta clicar em "Mais informações" e "Executar assim mesmo").
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 - **HTML5 / CSS3 / JavaScript:** Toda a lógica matemática, animações e tocar de áudios.
 - **Python:** Script principal (`main.py`) rodando a biblioteca `webview`.
 - **PyWebView:** Cria a janela nativa do Windows e renderiza o HTML dentro dela.
@@ -46,7 +51,7 @@ Se você usa Mac, Linux, ou apenas não quer rodar o arquivo `.exe`, você pode 
 
 ---
 
-## 🔧 Como rodar o código-fonte
+## Como rodar o código-fonte
 Se você é desenvolvedor e quer modificar o projeto:
 1. Tenha o **Python** instalado na sua máquina.
 2. Clone este repositório:
