@@ -148,10 +148,22 @@ init();
 // --- Controle de Volume ---
 let isMuted = false;
 const muteBtn = document.getElementById('mute-btn');
-const muteIcon = document.getElementById('mute-icon');
 
 if (muteBtn) {
+    muteBtn.addEventListener('mouseenter', () => {
+        if (!isMuted) {
+            hoverSound.currentTime = 0;
+            hoverSound.play().catch(e => {});
+        }
+    });
+
     muteBtn.addEventListener('click', () => {
+        // Toca o som de clique antes de alterar o volume
+        if (!isMuted) {
+            clickSound.currentTime = 0;
+            clickSound.play().catch(e => {});
+        }
+
         isMuted = !isMuted;
         
         // Altera o volume dos áudios
@@ -160,11 +172,11 @@ if (muteBtn) {
         clickSound.volume = isMuted ? 0.0 : 0.7;
         bigResultSound.volume = isMuted ? 0.0 : 1.0;
         
-        // Altera a opacidade ou estilo do ícone para indicar se está mudo
+        // Altera a opacidade do botão para indicar se está mudo
         if (isMuted) {
-            muteIcon.style.opacity = '0.3';
+            muteBtn.style.opacity = '0.5';
         } else {
-            muteIcon.style.opacity = '1.0';
+            muteBtn.style.opacity = '1.0';
         }
     });
 }
