@@ -11,8 +11,14 @@ Uma calculadora funcional inspirada na interface e estética de **Persona 3**! D
 ---
 
 ## 🚀 Como testar (Direto no Navegador Online)
-Se você quer apenas brincar com a calculadora, não precisa baixar nada! 
-Basta acessar a **[Versão Web no GitHub Pages]** (Insira aqui o link do seu GitHub Pages após ativá-lo).
+Se você quer apenas usar a calculadora sem baixar o `.exe`, basta acessar o link abaixo:
+
+👉 **[Acessar a Versão Web no GitHub Pages]** *(Insira o link aqui)*
+
+💡 **Dica de Ouro:** Você pode instalar a calculadora como se fosse um aplicativo no seu dispositivo!
+* **No Computador (Chrome/Edge):** Abra o link, clique nos 3 pontinhos no canto superior direito e selecione **"Salvar e Compartilhar" > "Criar Atalho"** (ou "Instalar Aplicativo").
+* **No Celular:** Abra o link, clique nos 3 pontinhos do navegador e escolha **"Adicionar à Tela Inicial"**.
+Assim você terá um ícone da calculadora direto na sua área de trabalho ou tela do celular!
 
 ---
 
