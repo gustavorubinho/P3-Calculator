@@ -144,3 +144,27 @@ function init() {
 }
 
 init();
+
+// --- Controle de Volume ---
+let isMuted = false;
+const muteBtn = document.getElementById('mute-btn');
+const muteIcon = document.getElementById('mute-icon');
+
+if (muteBtn) {
+    muteBtn.addEventListener('click', () => {
+        isMuted = !isMuted;
+        
+        // Altera o volume dos áudios
+        const newVolume = isMuted ? 0.0 : 1.0;
+        hoverSound.volume = isMuted ? 0.0 : 0.3;
+        clickSound.volume = isMuted ? 0.0 : 0.7;
+        bigResultSound.volume = isMuted ? 0.0 : 1.0;
+        
+        // Altera a opacidade ou estilo do ícone para indicar se está mudo
+        if (isMuted) {
+            muteIcon.style.opacity = '0.3';
+        } else {
+            muteIcon.style.opacity = '1.0';
+        }
+    });
+}
