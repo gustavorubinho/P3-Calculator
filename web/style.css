@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 body {
     margin: 0;
@@ -214,4 +214,39 @@ body {
 .mute-btn:active {
     transform: scale(0.9) rotate(-5deg) !important;
     background: white;
+}
+
+/* --- Botão de Mute (SVG) --- */
+.mute-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 70px;
+    height: 70px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.1s ease, filter 0.1s ease;
+    /* Sombrinha de leve no contêiner para destacar */
+}
+
+/* Cores do botão ao passar o mouse */
+.mute-btn:hover .mute-shapes {
+    fill: #ffea00;
+}
+
+.mute-btn:hover {
+    transform: scale(1.15) rotate(5deg) skewX(-5deg);
+    filter: drop-shadow(3px 3px 0px #ff0055);
+}
+
+.mute-btn:active {
+    transform: scale(0.9) rotate(-5deg);
+}
+
+/* Quando estiver mudo, altera a cor das formas para cinza */
+.mute-btn.muted .mute-shapes {
+    fill: #555555;
+    stroke: #222222;
 }

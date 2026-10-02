@@ -1,4 +1,4 @@
-﻿let runningTotal = 0;
+let runningTotal = 0;
 let buffer = "0";
 let previousOperator = null;
 
@@ -144,3 +144,37 @@ function init() {
 }
 
 init();
+
+// --- Controle de Volume (Botão Sólido) ---
+let isMuted = false;
+const muteBtn = document.getElementById('mute-btn');
+
+if (muteBtn) {
+    muteBtn.addEventListener('mouseenter', () => {
+        if (!isMuted) {
+            hoverSound.currentTime = 0;
+            hoverSound.play().catch(e => {});
+        }
+    });
+
+    muteBtn.addEventListener('click', () => {
+        if (!isMuted) {
+            clickSound.currentTime = 0;
+            clickSound.play().catch(e => {});
+        }
+
+        isMuted = !isMuted;
+        
+        // Altera o volume dos áudios
+        hoverSound.volume = isMuted ? 0.0 : 0.3;
+        clickSound.volume = isMuted ? 0.0 : 0.7;
+        bigResultSound.volume = isMuted ? 0.0 : 1.0;
+        
+        // Aplica a classe CSS para alterar a cor (de amarelo para cinza)
+        if (isMuted) {
+            muteBtn.classList.add('muted');
+        } else {
+            muteBtn.classList.remove('muted');
+        }
+    });
+}
