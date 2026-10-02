@@ -1,14 +1,11 @@
-# Ignorar pastas de build do PyInstaller
 build/
 dist/
 *.spec
 !Calculadora.spec
 
-# Ignorar arquivos temporários do Python
 __pycache__/
 *.py[cod]
 *$py.class
 
-# Ignorar arquivos de sistema operacional
 .DS_Store
 Thumbs.db

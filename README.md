@@ -10,9 +10,18 @@ Uma calculadora funcional inspirada na interface e estética de **Persona 3**! D
 
 ---
 
-## 🚀 Como testar (Direto no Navegador)
+## 🚀 Como testar (Direto no Navegador Online)
 Se você quer apenas brincar com a calculadora, não precisa baixar nada! 
 Basta acessar a **[Versão Web no GitHub Pages]** (Insira aqui o link do seu GitHub Pages após ativá-lo).
+
+---
+
+## 📂 Como baixar e rodar a Versão Web (Offline)
+Se você usa Mac, Linux, ou apenas não quer rodar o arquivo `.exe`, você pode abrir a calculadora diretamente como uma página web comum:
+1. No topo deste repositório, clique no botão verde **Code** e depois em **Download ZIP**.
+2. Extraia o arquivo `.zip` no seu computador.
+3. Abra a pasta `web` e dê um duplo clique no arquivo `index.html`.
+4. A calculadora abrirá no seu navegador padrão (Chrome, Edge, Firefox, etc.) funcionando perfeitamente e com todos os sons!
 
 ---
 
