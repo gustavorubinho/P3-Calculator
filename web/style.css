@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 body {
     margin: 0;
@@ -183,3 +183,34 @@ body {
 
 
 
+
+/* --- Botão Mute Final --- */
+.mute-btn {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 60px;
+    height: 60px;
+    background: #f0f7ff;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 1000;
+    transform: rotate(-15deg);
+    padding: 8px;
+    transition: transform 0.1s ease, filter 0.1s ease;
+}
+
+.mute-btn:hover {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.mute-btn:active {
+    transform: scale(0.9) rotate(-15deg);
+}
+
+.mute-btn.muted {
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
