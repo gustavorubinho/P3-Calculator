@@ -1,4 +1,4 @@
-let runningTotal = 0;
+﻿let runningTotal = 0;
 let buffer = "0";
 let previousOperator = null;
 
@@ -32,7 +32,7 @@ function handleSymbol(symbol) {
             runningTotal = 0;
             updateBigResult(buffer);
             break;
-        case 'â†':
+        case 'Ã¢â€ Â':
             if (buffer.length === 1) {
                 buffer = '0';
             } else {
@@ -45,9 +45,9 @@ function handleSymbol(symbol) {
             }
             break;
         case '+':
-        case 'âˆ’':
-        case 'Ã—':
-        case 'Ã·':
+        case 'Ã¢Ë†â€™':
+        case 'Ãƒâ€”':
+        case 'ÃƒÂ·':
             handleMath(symbol);
             break;
     }
@@ -73,11 +73,11 @@ function handleMath(symbol) {
 function flushOperation(intBuffer) {
     if (previousOperator === '+') {
         runningTotal += intBuffer;
-    } else if (previousOperator === 'âˆ’') {
+    } else if (previousOperator === 'Ã¢Ë†â€™') {
         runningTotal -= intBuffer;
-    } else if (previousOperator === 'Ã—') {
+    } else if (previousOperator === 'Ãƒâ€”') {
         runningTotal *= intBuffer;
-    } else if (previousOperator === 'Ã·') {
+    } else if (previousOperator === 'ÃƒÂ·') {
         runningTotal /= intBuffer;
     }
 }
@@ -93,27 +93,27 @@ function handleNumber(numberString) {
 function updateBigResult(value) {
     bigResult.innerText = value;
     
-    // Toca o som de impacto Ã©pico ao mostrar o nÃºmero gigante
+    // Toca o som de impacto ÃƒÂ©pico ao mostrar o nÃƒÂºmero gigante
     bigResultSound.currentTime = 0;
     bigResultSound.play().catch(e => {});
 
-    // AnimaÃ§Ã£o de freeze frame no nÃºmero gigante
+    // AnimaÃƒÂ§ÃƒÂ£o de freeze frame no nÃƒÂºmero gigante
     bigResult.classList.remove('update-anim');
     
-    // ForÃ§a reflow
+    // ForÃƒÂ§a reflow
     void bigResult.offsetWidth; 
     
     bigResult.classList.add('update-anim');
     
     setTimeout(() => {
         bigResult.classList.remove('update-anim');
-    }, 150); // Remove rÃ¡pido para dar o efeito de impacto (hit) do Persona
+    }, 150); // Remove rÃƒÂ¡pido para dar o efeito de impacto (hit) do Persona
 }
 
-// Instanciando os Ã¡udios (VocÃª precisarÃ¡ colocar arquivos com esses nomes na mesma pasta)
+// Instanciando os ÃƒÂ¡udios (VocÃƒÂª precisarÃƒÂ¡ colocar arquivos com esses nomes na mesma pasta)
 const hoverSound = new Audio('hover.wav');
 const clickSound = new Audio('click.wav');
-const bigResultSound = new Audio('result.wav'); // Som para o nÃºmero gigante
+const bigResultSound = new Audio('result.wav'); // Som para o nÃƒÂºmero gigante
 
 // Ajuste de volumes (0.0 a 1.0)
 hoverSound.volume = 0.3;
@@ -127,14 +127,14 @@ function init() {
     document.querySelector('.calc-buttons').addEventListener('click', function(event) {
         if(event.target.tagName !== "BUTTON") return;
         
-        // Toca o som de clique (reinicia caso o usuÃ¡rio clique muito rÃ¡pido)
+        // Toca o som de clique (reinicia caso o usuÃƒÂ¡rio clique muito rÃƒÂ¡pido)
         clickSound.currentTime = 0; 
-        clickSound.play().catch(e => {}); // catch previne erro no console se o arquivo nÃ£o existir
+        clickSound.play().catch(e => {}); // catch previne erro no console se o arquivo nÃƒÂ£o existir
         
         buttonClick(event.target.innerText);
     });
 
-    // Configura o som de hover (passar o mouse) para cada botÃ£o
+    // Configura o som de hover (passar o mouse) para cada botÃƒÂ£o
     buttons.forEach(button => {
         button.addEventListener('mouseenter', () => {
             hoverSound.currentTime = 0;
@@ -145,36 +145,3 @@ function init() {
 
 init();
 
-// --- Controle de Volume (Botão Sólido) ---
-let isMuted = false;
-const muteBtn = document.getElementById('mute-btn');
-
-if (muteBtn) {
-    muteBtn.addEventListener('mouseenter', () => {
-        if (!isMuted) {
-            hoverSound.currentTime = 0;
-            hoverSound.play().catch(e => {});
-        }
-    });
-
-    muteBtn.addEventListener('click', () => {
-        if (!isMuted) {
-            clickSound.currentTime = 0;
-            clickSound.play().catch(e => {});
-        }
-
-        isMuted = !isMuted;
-        
-        // Altera o volume dos áudios
-        hoverSound.volume = isMuted ? 0.0 : 0.3;
-        clickSound.volume = isMuted ? 0.0 : 0.7;
-        bigResultSound.volume = isMuted ? 0.0 : 1.0;
-        
-        // Aplica a classe CSS para alterar a cor (de amarelo para cinza)
-        if (isMuted) {
-            muteBtn.classList.add('muted');
-        } else {
-            muteBtn.classList.remove('muted');
-        }
-    });
-}

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 body {
     margin: 0;
@@ -19,7 +19,7 @@ body {
     position: relative;
 }
 
-/* A forma branca gigante (estilhaÃƒÆ’Ã‚Â§o) que cobre o canto superior esquerdo */
+/* A forma branca gigante (estilhaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§o) que cobre o canto superior esquerdo */
 .bg-shard {
     position: absolute;
     top: 0;
@@ -27,12 +27,12 @@ body {
     width: 100%;
     height: 100%;
     background: white;
-    /* Coordenadas para criar o polÃƒÆ’Ã‚Â­gono irregular conforme o design */
+    /* Coordenadas para criar o polÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­gono irregular conforme o design */
     clip-path: polygon(0 0, 40% 0, 15% 25%, 35% 20%, 15% 70%, 0 85%);
     z-index: 0;
 }
 
-/* AnimaÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Â£o de balanÃƒÆ’Ã‚Â§o suave (sway) para o container da calculadora */
+/* AnimaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o de balanÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§o suave (sway) para o container da calculadora */
 @keyframes sway {
     0% { transform: perspective(800px) rotateY(-15deg) rotateZ(-3deg) translateY(-50%); }
     50% { transform: perspective(800px) rotateY(-10deg) rotateZ(-1deg) translateY(-52%); }
@@ -40,14 +40,14 @@ body {
 }
 
 .wrapper {
-    /* Retiramos o background e clip-path daqui para os botÃƒÆ’Ã‚Âµes nÃƒÆ’Ã‚Â£o serem cortados ao pular para fora */
+    /* Retiramos o background e clip-path daqui para os botÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âµes nÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o serem cortados ao pular para fora */
     padding: 30px;
     width: 320px;
     position: absolute;
     left: 10%;
     top: 50%;
     animation: sway 6s infinite ease-in-out;
-    /* Usando filter drop-shadow ao invÃƒÆ’Ã‚Â©s de box-shadow, pois ele respeita o formato do pseudo-elemento */
+    /* Usando filter drop-shadow ao invÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©s de box-shadow, pois ele respeita o formato do pseudo-elemento */
     filter: drop-shadow(14px 15px 0 rgba(255, 1, 1, 0.616));
     z-index: 10;
 }
@@ -103,7 +103,7 @@ body {
     padding: 15px;
     transition: transform 0.05s, background 0.05s;
     position: relative;
-    /* Todos botÃƒÆ’Ã‚Âµes levemente deformados originais */
+    /* Todos botÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âµes levemente deformados originais */
     transform: skewX(-5deg) rotate(-1deg);
 }
 
@@ -111,7 +111,7 @@ body {
     flex: 2;
 }
 
-/* BotÃƒÆ’Ã‚Âµes irregulares originais para dar o visual caÃƒÆ’Ã‚Â³tico */
+/* BotÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âµes irregulares originais para dar o visual caÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³tico */
 .calc-button-row:nth-child(even) .calc-button:nth-child(odd) {
     transform: skewX(4deg) rotate(2deg);
 }
@@ -183,38 +183,3 @@ body {
 
 
 
-/* --- Botão Mute Final (SVG) --- */
-.mute-btn {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    width: 80px;
-    height: 80px;
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    outline: none;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-    z-index: 1000;
-    transition: transform 0.1s ease, filter 0.1s ease;
-}
-
-.mute-btn:hover .mute-shapes {
-    fill: #a6735e;
-}
-
-.mute-btn:hover {
-    transform: scale(1.15) rotate(5deg) skewX(-5deg);
-    filter: drop-shadow(4px 4px 0px rgba(0, 31, 84, 0.4));
-}
-
-.mute-btn:active {
-    transform: scale(0.9) rotate(-5deg);
-}
-
-.mute-btn.muted .mute-shapes {
-    fill: #555555;
-    stroke: #222222;
-}
