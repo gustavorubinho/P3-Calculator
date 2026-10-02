@@ -281,3 +281,35 @@ body {
     filter: grayscale(100%);
     opacity: 0.6;
 }
+
+/* --- Botão Mute Final --- */
+.mute-btn {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 80px;
+    height: 80px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.1s ease, filter 0.1s ease;
+}
+
+.mute-btn:hover .mute-shapes {
+    fill: #a6735e; /* um marrom um pouco mais claro no hover */
+}
+
+.mute-btn:hover {
+    transform: scale(1.15) rotate(5deg) skewX(-5deg);
+    filter: drop-shadow(4px 4px 0px rgba(0, 31, 84, 0.4));
+}
+
+.mute-btn:active {
+    transform: scale(0.9) rotate(-5deg);
+}
+
+.mute-btn.muted .mute-shapes {
+    fill: #555555;
+    stroke: #222222;
+}
