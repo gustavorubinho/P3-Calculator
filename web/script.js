@@ -172,11 +172,13 @@ if (muteBtn) {
         clickSound.volume = isMuted ? 0.0 : 0.7;
         bigResultSound.volume = isMuted ? 0.0 : 1.0;
         
-        // Altera a opacidade do botão para indicar se está mudo
+        // Altera a aparência do botão para indicar se está mudo
         if (isMuted) {
             muteBtn.style.opacity = '0.5';
+            muteBtn.innerText = '🔇';
         } else {
             muteBtn.style.opacity = '1.0';
+            muteBtn.innerText = '🔊';
         }
     });
 }

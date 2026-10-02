@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 body {
     margin: 0;
@@ -19,7 +19,7 @@ body {
     position: relative;
 }
 
-/* A forma branca gigante (estilhaÃ§o) que cobre o canto superior esquerdo */
+/* A forma branca gigante (estilhaÃƒÂ§o) que cobre o canto superior esquerdo */
 .bg-shard {
     position: absolute;
     top: 0;
@@ -27,12 +27,12 @@ body {
     width: 100%;
     height: 100%;
     background: white;
-    /* Coordenadas para criar o polÃ­gono irregular conforme o design */
+    /* Coordenadas para criar o polÃƒÂ­gono irregular conforme o design */
     clip-path: polygon(0 0, 40% 0, 15% 25%, 35% 20%, 15% 70%, 0 85%);
     z-index: 0;
 }
 
-/* AnimaÃ§Ã£o de balanÃ§o suave (sway) para o container da calculadora */
+/* AnimaÃƒÂ§ÃƒÂ£o de balanÃƒÂ§o suave (sway) para o container da calculadora */
 @keyframes sway {
     0% { transform: perspective(800px) rotateY(-15deg) rotateZ(-3deg) translateY(-50%); }
     50% { transform: perspective(800px) rotateY(-10deg) rotateZ(-1deg) translateY(-52%); }
@@ -40,14 +40,14 @@ body {
 }
 
 .wrapper {
-    /* Retiramos o background e clip-path daqui para os botÃµes nÃ£o serem cortados ao pular para fora */
+    /* Retiramos o background e clip-path daqui para os botÃƒÂµes nÃƒÂ£o serem cortados ao pular para fora */
     padding: 30px;
     width: 320px;
     position: absolute;
     left: 10%;
     top: 50%;
     animation: sway 6s infinite ease-in-out;
-    /* Usando filter drop-shadow ao invÃ©s de box-shadow, pois ele respeita o formato do pseudo-elemento */
+    /* Usando filter drop-shadow ao invÃƒÂ©s de box-shadow, pois ele respeita o formato do pseudo-elemento */
     filter: drop-shadow(14px 15px 0 rgba(255, 1, 1, 0.616));
     z-index: 10;
 }
@@ -103,7 +103,7 @@ body {
     padding: 15px;
     transition: transform 0.05s, background 0.05s;
     position: relative;
-    /* Todos botÃµes levemente deformados originais */
+    /* Todos botÃƒÂµes levemente deformados originais */
     transform: skewX(-5deg) rotate(-1deg);
 }
 
@@ -111,7 +111,7 @@ body {
     flex: 2;
 }
 
-/* BotÃµes irregulares originais para dar o visual caÃ³tico */
+/* BotÃƒÂµes irregulares originais para dar o visual caÃƒÂ³tico */
 .calc-button-row:nth-child(even) .calc-button:nth-child(odd) {
     transform: skewX(4deg) rotate(2deg);
 }
@@ -182,7 +182,7 @@ body {
 }
 
 
-/* Botão de volume (Mute) */
+/* BotÃ£o de volume (Mute) */
 .mute-btn {
     position: absolute;
     top: 30px;
