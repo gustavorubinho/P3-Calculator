@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* Linha diagonal simulando o horizonte Persona 3 */
+    background: linear-gradient(177deg, #2791ff 70%, #001f54 70%);
+    font-family: 'Anton', 'Arial Black', sans-serif;
+    height: 100vh;
+    color: white;
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    position: relative;
+}
+
+/* A forma branca gigante (estilhaço) que cobre o canto superior esquerdo */
+.bg-shard {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    /* Coordenadas para criar o polígono irregular conforme o design */
+    clip-path: polygon(0 0, 40% 0, 15% 25%, 35% 20%, 15% 70%, 0 85%);
+    z-index: 0;
+}
+
+/* Animação de balanço suave (sway) para o container da calculadora */
+@keyframes sway {
+    0% { transform: perspective(800px) rotateY(-15deg) rotateZ(-3deg) translateY(-50%); }
+    50% { transform: perspective(800px) rotateY(-10deg) rotateZ(-1deg) translateY(-52%); }
+    100% { transform: perspective(800px) rotateY(-15deg) rotateZ(-3deg) translateY(-50%); }
+}
+
+.wrapper {
+    /* Retiramos o background e clip-path daqui para os botões não serem cortados ao pular para fora */
+    padding: 30px;
+    width: 320px;
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    animation: sway 6s infinite ease-in-out;
+    /* Usando filter drop-shadow ao invés de box-shadow, pois ele respeita o formato do pseudo-elemento */
+    filter: drop-shadow(14px 15px 0 rgba(255, 1, 1, 0.616));
+    z-index: 10;
+}
+
+/* Pseudo-elemento faz o papel do papel branco rasgado de fundo */
+.wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    clip-path: polygon(2% 5%, 98% 0%, 100% 95%, 0% 100%);
+    z-index: -1;
+}
+
+.screen {
+    background: #2791ff;
+    color: white;
+    font-size: 3rem;
+    text-align: right;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    /* Um pouco torto para combinar */
+    transform: rotate(2deg) skewX(-5deg);
+    box-shadow: 4px 4px 0 #001f54;
+    position: relative;
+}
+
+.calc-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+}
+
+.calc-button-row {
+    display: flex;
+    gap: 8px;
+}
+
+.calc-button {
+    flex: 1;
+    background: #111;
+    color: white;
+    border: none;
+    font-size: 24px;
+    font-family: 'Anton', sans-serif;
+    cursor: pointer;
+    padding: 15px;
+    transition: transform 0.05s, background 0.05s;
+    position: relative;
+    /* Todos botões levemente deformados originais */
+    transform: skewX(-5deg) rotate(-1deg);
+}
+
+.calc-button.double {
+    flex: 2;
+}
+
+/* Botões irregulares originais para dar o visual caótico */
+.calc-button-row:nth-child(even) .calc-button:nth-child(odd) {
+    transform: skewX(4deg) rotate(2deg);
+}
+.calc-button-row:nth-child(odd) .calc-button:nth-child(even) {
+    transform: skewX(-6deg) rotate(-2deg) scale(1.02);
+}
+
+/* Efeito Hover base (cores, sombra, escala) */
+.calc-button:hover {
+    background: #2791ff;
+    color: #fff;
+    z-index: 100;
+    box-shadow: 4px 4px 0 rgb(173, 0, 86);
+    /* Fallback */
+    transform: scale(1.15) rotate(4deg) skewX(-10deg) !important;
+}
+
+.calc-button:hover {
+    background: #2791ff;
+    color: #fff;
+    z-index: 220;
+    box-shadow: 4px 4px 0 rgb(173, 0, 0);
+    /* Fallback */
+    transform: scale(1.15) rotate(4deg) skewX(-10deg) !important;
+}
+
+/* Hover girando para a ESQUERDA de forma alternada */
+.calc-button-row:nth-child(odd) .calc-button:nth-child(odd):hover,
+.calc-button-row:nth-child(even) .calc-button:nth-child(even):hover {
+    transform: scale(1.15) rotate(-6deg) skewX(10deg) !important;
+}
+
+/* Hover girando para a DIREITA de forma alternada */
+.calc-button-row:nth-child(even) .calc-button:nth-child(odd):hover,
+.calc-button-row:nth-child(odd) .calc-button:nth-child(even):hover {
+    transform: scale(1.15) rotate(6deg) skewX(-10deg) !important;
+}
+
+.calc-button:active {
+    transform: scale(0.9) rotate(-5deg) !important;
+    background: white;
+    color: black;
+}
+
+.big-result-container {
+    position: absolute;
+    right: 5%;
+    bottom: 30%;
+    transform: translateY(4%);
+    pointer-events: none;
+    z-index: 5;
+}
+
+.big-result {
+    font-size: 45vw;
+    color: #001f54;
+    margin: 0;
+    line-height: 0.7;
+    font-weight: 400;
+    letter-spacing: -2vw;
+    transition: all 0.1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.big-result.update-anim {
+    transform: scale(1.2) rotate(5deg) skewX(-15deg);
+    color: white;
+    text-shadow: 20px 20px 0 #2791ff, -10px -10px 0 #000;
+}
